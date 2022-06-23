@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/normalize.css">
+        <link rel="stylesheet" href="./styles/index.css">
+        <title>Encriptador de Mensajes</title>        
+    </head>
+    <body>
+        <div class="contenedor">
+            <header class="encabezado">
+                <h1>Primer Desafío: Encriptador de texto</h1>
+            </header>
+            <div class="campo-1">
+                <textarea class="campo" id="entrada" placeholder="Escriba su texto aquí..." cols="30" rows="10" spellcheck="false"></textarea>
+            </div>
+            <div class="campo-2">
+                <textarea class="campo resultado" id="resultado" placeholder="Ningun texto fue encontrado" cols="30" rows="10" spellcheck="false"></textarea>                      
+            </div>
+            <div class="advertencia"><p>&#9888;</p>Solo acepta letras sin acentos</div>
+            <div class="boton-1">
+                <button class="boton" type="button" id="encriptar"><span>Encriptar</span></button>
+            </div>
+            <div class="boton-2">
+                <button class="boton" type="button" id="desencriptar"><span>Desencriptar</span></button>
+            </div>
+            <div class="boton-3">
+                <button class="boton" type="button" id="copiar"><span>Copiar</span></button>
+            </div>
+            <div class="boton-4">
+                <button class="boton" type="button" id="limpiar"><span>Limpiar</span></button>
+            </div>            
+            <footer class="pie-pagina">
+                <h7>&copy; Mario Salvador Barajas Chávez 2022</h7>
+            </footer>
+        </div>
+    </body>
+    <script type="module" src="./index.js"></script>   
+</html>

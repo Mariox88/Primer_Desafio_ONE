@@ -1,0 +1,201 @@
+:root
+{
+    --botones: #C62828;
+    --warning: #FFAA00;
+    --medioTono: #848484;
+    --encabezado: #212121;
+    --placeholder: #BDBDBD;
+    --botonDisabled: #E57373;
+    --fondoPrincipal: #424242;
+    --textoPrincipal: #FAFAFA;
+    --fuente: 'Ubuntu', sans-serif;    
+}
+.contenedor
+{
+    min-height: 100vh;
+    background: var(--fondoPrincipal);
+    font-family: var(--fuente);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 1fr 25px 40px 75px;
+    grid-template-areas: "encabezado    encabezado      encabezado  encabezado"
+                         "campo-1       campo-1         campo-2     campo-2"   
+                         "advertencia   advertencia     vacio       vacio"
+                         "encriptar     desencriptar    copiar      limpiar"
+                         "pie-pagina    pie-pagina      pie-pagina  pie-pagina";
+}
+.contenedor .encabezado
+{    
+    background: var(--encabezado);
+    color: var(--textoPrincipal);
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: encabezado;
+}
+.contenedor .campo-1
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: campo-1;
+}
+.contenedor .campo-2
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: campo-2;
+}
+.contenedor .campo
+{
+    width: 90%;
+    height: 90%;
+    padding: 15px;
+    margin: auto;
+    border: none;
+    background-color: var(--fondoPrincipal);
+    color: var(--textoPrincipal);
+    text-align: center;
+    font-size: 20px;
+    resize: none;
+    transition: all 0.5s;
+}
+.contenedor .campo.resultado
+{
+    margin: auto;
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--fondoPrincipal);    
+}
+.campo:focus
+{
+    border: 1px solid var(--fondoPrincipal);
+    background-color: var(--textoPrincipal);
+    color: var(--fondoPrincipal);
+    outline: none;    
+}
+.campo:hover
+{
+    box-shadow: 0px 0px 10px 10px var(--placeholder);
+}
+.campo:hover::placeholder
+{
+    color: var(--placeholder);
+}
+.campo:focus:hover
+{
+    box-shadow: none;
+}
+.campo:focus::placeholder
+{
+    color: var(--fondoPrincipal);
+}
+.campo::placeholder
+{
+    color: var(--medioTono);
+    text-align: center;
+}
+.contenedor .boton-1
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: encriptar;
+}
+.contenedor .boton-2
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: desencriptar;
+}
+.contenedor .boton-3
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: copiar;
+}
+.contenedor .boton-4
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: limpiar;
+}
+.contenedor .boton
+{
+    width: 90%;
+    height: 100%;
+    border: none;
+    border-radius: 50px;
+    background: var(--encabezado);
+    color: var(--textoPrincipal);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+.boton:hover
+{
+    box-shadow: 0px 0px 5px 5px var(--textoPrincipal);
+}
+.boton::after
+{
+    content: "";
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    border-radius: 100px;
+    transition: all 0.5s;
+    position: absolute;
+    transform-origin: center;    
+    z-index: 1;    
+}
+.boton:hover::after
+{
+    background-color: var(--botones);
+    transform: scale(10000);
+}
+.boton > span
+{
+    position: relative;
+    z-index: 2;
+}
+.contenedor .advertencia
+{
+    color: var(--medioTono);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: advertencia;
+}
+.advertencia > p
+{
+    margin-right: 5px;
+    color: var(--warning);
+}
+.contenedor .pie-pagina
+{
+    background: var(--encabezado);
+    color: var(--textoPrincipal);
+    font-size: 10px;
+    text-align: center;
+    align-items:flex-end;
+    justify-content: center;
+    display: flex;
+    grid-area: pie-pagina;
+}

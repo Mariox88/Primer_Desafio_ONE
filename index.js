@@ -1,0 +1,15 @@
+import { onInput } from './components/textoNormal.js';
+import { encriptar } from './components/botonEncriptar.js';
+import { desencriptar } from './components/botonDesencriptar.js';
+import { copiar, limpiar } from './components/botonesAdicionales.js';
+export const textoNormal = document.querySelector('#entrada');
+export const textoEncriptado = document.querySelector('#resultado');
+const botonCopiar = document.querySelector('#copiar');
+const botonLimpiar = document.querySelector('#limpiar');
+const botonEncriptar = document.querySelector('#encriptar');
+const botonDesencriptar = document.querySelector('#desencriptar');
+textoNormal.addEventListener('input', onInput);
+botonCopiar.addEventListener('click', copiar);
+botonLimpiar.addEventListener('click', limpiar);
+botonEncriptar.addEventListener('click', encriptar);
+botonDesencriptar.addEventListener('click', desencriptar);
